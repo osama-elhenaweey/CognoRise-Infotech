@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* Light Theme Colors */
+:root {
+    --color-body-background: #f7fafc;
+    --color-background: #ffffff;
+    --color-button: #48bb78;
+    --color-button-hover: #38a169;
+    --color-text: #2d3748;
+    --color-border: #e2e8f0;
+    --color-hover: #f6ad55;
+}
+
+/* Dark Theme Colors */
+body.dark {
+    --color-body-background: #1a202c;
+    --color-background: #2d3748;
+    --color-button: #4fd1c5;
+    --color-button-hover: #38b2ac;
+    --color-text: #e2e8f0;
+    --color-border: #4a5568;
+    --color-hover: #ed8936;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    color: var(--color-text);
+}
+
+body {
+    background-color: var(--color-body-background);
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.bmi {
+    background-color: var(--color-background);
+    min-width: 70rem;
+    padding: 5rem 9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.heading {
+    color: var(--color-text);
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    transition: color 0.3s;
+}
+
+.inputs-container {
+    display: flex;
+    margin: 2rem;
+    gap: 2rem;
+}
+
+.btn {
+    width: 40%;
+    background-color: var(--color-button);
+    border: 2px solid var(--color-border);
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--color-body-background);
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.6rem 3.2rem;
+    margin: 2rem 0;
+    transition: background-color 0.3s ease-in-out, color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--color-button-hover);
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.message-container {
+    font-family: "Chakra Petch", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 2rem;
+    transition: color 0.3s;
+}
+
+.message-container div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    gap: 3rem;
+    color: var(--color-text);
+}
+
+.message {
+    color: var(--color-text);
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--color-text);
+    transition: 0.5s;
+}
+
+.input-group input {
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    color: var(--color-text);
+    padding: 0 10px;
+    background: transparent;
+    border: 1.2px solid var(--color-border);
+    outline: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -10px;
+    font-size: 12px;
+    background-color: var(--color-background);
+    padding: 0 5px;
+}
+
+.input-group input:focus,
+.input-group input:valid {
+    background-color: var(--color-background);
+}
+
+.fa-solid {
+    color: var(--color-border);
+    font-size: 4rem;
+}
+
+.fa-dumbbell {
+    position: relative;
+    top: -40rem;
+    left: -50%;
+}
+
+.fa-weight-scale {
+    position: relative;
+    top: 30px;
+    left: 50%;
+}
+
+/* Toggle Button Style */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+
+    background-color: var(--color-button);
+    color: var(--color-body-background);
+
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+}
+.theme-toggle i {
+    font-size: 2.5rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-button-hover);
+    color: var(--color-text);
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .bmi {
+        padding: 3rem 5rem;
+        min-width: auto;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .inputs-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 1rem;
+    }
+
+    .btn {
+        width: 60%;
+        font-size: 1.6rem;
+        padding: 1.4rem 2.8rem;
+    }
+
+    .message-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .message-container div {
+        font-size: 1.4rem;
+        gap: 1rem;
+    }
+
+    .message {
+        font-size: 1.8rem;
+    }
+
+    .fa-solid {
+        font-size: 3rem;
+    }
+
+    .fa-dumbbell {
+        top: -45rem;
+        left: -50%;
+    }
+
+    .fa-weight-scale {
+        top: 15px;
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bmi {
+        padding: 2rem 3rem;
+        border-radius: 20px;
+    }
+
+    .heading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .inputs-container {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem;
+    }
+
+    .input-group input {
+        width: 100%;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 80%;
+        font-size: 1.4rem;
+        padding: 1.2rem 2.5rem;
+    }
+
+    .message-container {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .message-container div {
+        font-size: 1.2rem;
+    }
+
+    .message {
+        font-size: 1.6rem;
+    }
+
+    .fa-solid {
+        font-size: 2.5rem;
+    }
+
+    .fa-weight-scale {
+        top: 20px;
+        left: 50%;
+    }
+}

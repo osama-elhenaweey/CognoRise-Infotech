@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script defer src="./index.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>BMI Calculator</title>
+    </head>
+    <body>
+        <main class="bmi">
+            <h1 class="heading">BMI CALCULATOR</h1>
+            <div class="inputs-container">
+                <!-- <div class="input-container">
+                    <input type="text" placeholder="height" id="height" />
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="weight" id="weight" />
+                </div>
+                 -->
+                <div class="input-group">
+                    <input type="text" required id="height" />
+                    <label for="">Height</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" required id="weight" />
+                    <label for="">Weight</label>
+                </div>
+            </div>
+            <button class="btn" id="btn">submit</button>
+            <div class="message-container">
+                <div>
+                    <span>Your BMI Score is :</span>
+                    <p id="bmi-message" class="message"></p>
+                </div>
+                <div>
+                    <span>Your health status is :</span>
+                    <p id="message" class="message"></p>
+                </div>
+            </div>
+            <i class="fa-solid fa-weight-scale"></i>
+            <i class="fa-solid fa-dumbbell"></i>
+        </main>
+        <!-- Add this to your body section -->
+        <button class="theme-toggle">
+            <i class="fa-solid fa-sun"></i>
+            <!-- Default icon for light theme -->
+        </button>
+    </body>
+</html>
