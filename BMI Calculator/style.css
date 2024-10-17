@@ -149,7 +149,7 @@ body {
 
 .input-group input:focus ~ label,
 .input-group input:valid ~ label {
-    top: -10px;
+    top: 0;
     font-size: 12px;
     background-color: var(--color-background);
     padding: 0 5px;
